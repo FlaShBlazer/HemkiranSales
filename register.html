@@ -31,16 +31,23 @@
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">First name</label>
+                                    <label class="label">Enter Name</label>
                                     <input class="input--style-4" type="text" name="first_name" id="firstname">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Last name</label>
-                                    <input class="input--style-4" type="text" name="last_name" id="lastname">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email" id="email">
                                 </div>
                             </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="password" name="passsword" id="password1">
+                                </div>
+                            </div>
+                             
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
@@ -73,16 +80,17 @@
                             </div>
                         </div>
                         <div class="row row-space">
+                           
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" id="email">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="number" name="phone" id="mob">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone" id="mob">
+                                    <label class="label">Designation</label>
+                                    <input class="input--style-4" type="text" name="designation" id="design1">
                                 </div>
                             </div>
                         </div>
@@ -133,13 +141,10 @@
         };
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
-       // var messagesRef=app.database().ref('Staff Data');
         const auth = getAuth();
         const btn=document.getElementById("subbtn");
-       // const db= getFirestore(app);
-
         btn.addEventListener("click",(e)=>{
-			// e.preventDefault();
+			e.preventDefault();
             var filter1 = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
             var filter2 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/ ;
             if(!filter1.test(document.getElementById("email").value) && !filter2.test(document.getElementById("mob").value))
@@ -153,13 +158,14 @@
             {
 
                 var first=document.getElementById("firstname").value;
-                var last=document.getElementById("lastname").value;
                 var email=document.getElementById("email").value;
                 var gender=document.getElementsByName("gender");
                 var phone=document.getElementById("mob").value;
                 var br=document.getElementById("branch").value;
                 var bday=document.getElementById("bdaypicker").value;
                 var id=document.getElementById("eid").value;
+                var pass=document.getElementById("password1").value;
+                var des=document.getElementById("design1").value;
                 var actualgender;
                 var i;
                 for(i = 0; i < gender.length; i++) 
@@ -169,17 +175,26 @@
                 }
                 set(ref(database,'staff/' + id), {
                     empid: id,
-                    name: first + last,
+                    name: first ,
                     email: email,
                     gender: gender,
                     birthdate: bday,
                     mobile: phone,
-                    branch: br
+                    branch: br,
+                    password: pass,
+                    designation: des
                 }).then(()=> {
-                    window.location.reload("./home.html");
+                    createUserWithEmailAndPassword(auth,email,pass).then((userCredential)=>{
+                    const user=userCredential.user;
+				    location.replace("./home.html");
+                }).catch((error)=>{
+                    const errorMessage=error.message;
+                    alert(errorMessage);
+                });
                 }).catch((error)=> {
                     alert(error.message);
                 });
+                
             }
         });
     </script>    
