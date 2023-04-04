@@ -20,21 +20,16 @@
          alt="">
     <div class="ms-2">
       <h5 class="fs-6 mb-0">
-        <a class="text-decoration-none" href="#"><label id="l1">User</label></a>
+        <a class="text-decoration-none" href="#"><label id="l1"></label></a>
       </h5>
-      <p class="mt-1 mb-0"><label id="l2">Designation</label></p>
+      <p class="mt-1 mb-0"><label id="l2"></label></p>
     </div>
   </div>
 
   
   <ul class="categories list-unstyled">
     <li class="has-dropdown">
-      <i class="uil-calendar-alt"></i><a href="#"> Register Staff</a>
-      <ul class="sidebar-dropdown list-unstyled">
-        <li><a href="#" target=""> Sales </a></li>
-        <li><a href="#">Payment</a></li>
-        <li><a href="#">Form Two</a></li>
-      </ul>
+      <i class="uil-calendar-alt"></i><a href="./register.html"> Register Staff</a>
     </li>
   
     <li class="has-dropdown">
@@ -112,6 +107,7 @@
           </li>
         </ul>
       </div>
+      <button id="logout">Logout</button>
     </div>
   </nav>
 
@@ -146,7 +142,49 @@
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth();
-    
+    var logoutbtn=document.getElementById("logout");
+    auth.onAuthStateChanged((user)=>{
+      if(user)
+      {
+        database.ref("HemkiranMotors/staff/").on('value',function(snapshot){
+          snapshot.forEach(function(childSnapshot){
+            var data=childSnapshot.val();
+            alert(data);
+          });
+        });
+//        document.getElementById("l1").innerHTML=
+      }
+      else
+      {
+        alert("Something went wrong");
+      }
+    });
+    logout.addEventListener(click,(e)=>{
+      e.preventDefault();
+      auth.signOut().then(()=>{
+        location.replace("./index.html");
+      }).catch((error)=>{
+        alert("Something went wrong. Please try again.")
+      })
+    });
 </script>
+<script> 
+  document.addEventListener('contextmenu', event=> event.preventDefault()); 
+  document.onkeydown = function(e) { 
+  if(event.keyCode == 123) { 
+  return false; 
+  } 
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
+  return false; 
+  } 
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
+  return false; 
+  } 
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
+  return false; 
+  } 
+  } 
+  </script> 
+
 </body>
 </html>

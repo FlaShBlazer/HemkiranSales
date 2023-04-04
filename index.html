@@ -50,7 +50,7 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Selection is required">
+					<!-- <div class="wrap-input100 validate-input" data-validate = "Selection is required">
 						<label class="label">Level</label>
 						<div class="rs-select2 js-select-simple select--no-search">
 							<select name="post" id="post">
@@ -60,7 +60,7 @@
 							</select>
 							<div class="select-dropdown"></div>
 						</div>
-					</div>
+					</div> -->
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" id="lgnbtn">
 							Login
@@ -126,21 +126,33 @@
 			e.preventDefault();
             var m=document.getElementById("email").value;
             var p=document.getElementById("password").value;
-			var post=document.getElementById("post").value;
-
-            signInWithEmailAndPassword(auth,m,p).then((userCredential)=>{
+		    signInWithEmailAndPassword(auth,m,p).then((userCredential)=>{
                 const user=userCredential.user;
-				if(post == "Boss")
-					location.replace("./home.html");
-				else if(post == "Staff")
-				    location.replace("./home1.html");
-            }).catch((error)=>{
-                // const errorCode=error.code;
-                // const errorMessage=error.message;
+				console.log(userCredential.user);
+				//set(ref(database,"HemkiranMotors/staff/" + ))
+				//location.replace("./home.html");
+		     }).catch((error)=>{
                 alert("User not found. Please register and try again.");
             });
         });
     </script>
-
+	 <script> 
+		document.addEventListener('contextmenu', event=> event.preventDefault()); 
+		document.onkeydown = function(e) { 
+		if(event.keyCode == 123) { 
+		return false; 
+		} 
+		if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
+		return false; 
+		} 
+		if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
+		return false; 
+		} 
+		if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
+		return false; 
+		} 
+		} 
+		</script> 
+  
 </body>
 </html>

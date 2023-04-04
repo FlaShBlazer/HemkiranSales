@@ -26,35 +26,36 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Employee ID</label>
-                                    <input class="input--style-4" type="number" name="empid" id="eid">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Enter Name</label>
-                                    <input class="input--style-4" type="text" name="first_name" id="firstname">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" id="email">
+                                    <input class="input--style-4" type="number" name="eid" id="eid">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="passsword" id="password1">
+                                    <input class="input--style-4" type="password" name="password" id="password">
                                 </div>
                             </div>
-                             
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="first_name" id="fname">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="last_name" id="sname">
+                                </div>
+                            </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Birthday</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday" id="bdaypicker">
+                                        <input class="input--style-4 js-datepicker" type="text" name="birthday" id="bday">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -64,15 +65,11 @@
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Male
-                                            <input type="radio" name="gender" id="Male">
+                                            <input type="radio" checked="checked" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Female
-                                            <input type="radio" name="gender" id="Female">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Others
-                                            <input type="radio" name="gender" id="Others">
+                                            <input type="radio" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -80,35 +77,120 @@
                             </div>
                         </div>
                         <div class="row row-space">
-                           
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email" id="mailid">
+                                </div>
+                            </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="number" name="phone" id="mob">
+                                    <input class="input--style-4" type="text" name="phone" id="contact">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="input-group">
+                                <label class="label">Company</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="company" id="company">
+                                        <option disabled="disabled" selected="selected" >Choose option</option>
+                                        <option>Hemkiran Motors</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label class="label">Department</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="department" id="dept">
+                                        <option disabled="disabled" selected="selected" >Choose option</option>
+                                        <option>Sales</option>
+                                        <option>Service</option>
+                                        <option>Office</option>
+                                        <option>Account</option>
+                                        <option>Back Office</option>
+                                        <option>Technician</option>
+                                        <option>Service Manager</option>
+                                        <option>Mechanical</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="input-group">
+                                <label class="label">Job Title</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="title" id="title">
+                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                        <option>Mech</option>
+                                        <option>Back Office</option>
+                                        <option>Cashier</option>
+                                        <option>Demo</option>
+                                        <option>DSE</option>
+                                        <option>Partner</option>
+                                        <option>Service</option>
+                                        <option>Sales Manager</option>
+                                        <option>Service Manager</option>
+                                        <option>Store</option>
+                                        <option>Store Manager</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label class="label">Status</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="status" id="status">
+                                        <option disabled="disabled" selected="selected" >Choose option</option>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                                              
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Join Date</label>
+                                <div class="input-group-icon">
+                                    <input class="input--style-4 js-datepicker" type="text" name="joindate" id="join">
+                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Address</label>
+                                    <input class="input--style-4" type="text" name="address" id="address">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Designation</label>
-                                    <input class="input--style-4" type="text" name="designation" id="design1">
+                                    <label class="label">Taluka</label>
+                                    <input class="input--style-4" type="text" name="taluka" id="taluka">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">District</label>
+                                    <input class="input--style-4" type="text" name="district" id="district">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Pincode</label>
+                                    <input class="input--style-4" type="number" name="pincode" id="pincode">
                                 </div>
                             </div>
                         </div>
-                        <div class="input-group">
-                            <label class="label">Branch</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="branch" id="branch">
-                                    <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>Miraj</option>
-                                    <option>Atpadi</option>
-                                    <option>Jath</option>
-                                    <option>Tasgaon</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="button" id="subbtn">Submit</button>
+                            <button class="btn btn--radius-2 btn--blue" type="submit" id="subbtn">Submit</button>
                         </div>
                     <!-- </form> -->
                 </div>
@@ -147,25 +229,31 @@
 			e.preventDefault();
             var filter1 = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
             var filter2 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/ ;
-            if(!filter1.test(document.getElementById("email").value) && !filter2.test(document.getElementById("mob").value))
+            if(!filter1.test(document.getElementById("mailid").value) && !filter2.test(document.getElementById("contact").value))
             {
-                document.getElementById("email").focus();
-                document.getElementById("email").style.border = "1px solid red";
-                document.getElementById("mob").style.border = "1px solid red";
-                document.getElementById("mob").focus();
+                document.getElementById("mailid").focus();
+                document.getElementById("mailid").style.border = "1px solid red";
+                document.getElementById("contact").style.border = "1px solid red";
+                document.getElementById("contact").focus();
             }
             else
             {
 
-                var first=document.getElementById("firstname").value;
-                var email=document.getElementById("email").value;
+                var first=document.getElementById("fname").value;
+                var second=document.getElementById("sname").value;
+                var email=document.getElementById("mailid").value;
                 var gender=document.getElementsByName("gender");
-                var phone=document.getElementById("mob").value;
-                var br=document.getElementById("branch").value;
-                var bday=document.getElementById("bdaypicker").value;
+                var phone=document.getElementById("contact").value;
+                var bday=document.getElementById("bday").value;
                 var id=document.getElementById("eid").value;
-                var pass=document.getElementById("password1").value;
-                var des=document.getElementById("design1").value;
+                var pass=document.getElementById("password").value;
+                var company=document.getElementById("company").value;
+                var department=document.getElementById("dept").value;
+                var status=document.getElementById("status").value;
+                var title=document.getElementById("title").value;
+                var addr=document.getElementById("address").value;
+                var tal=document.getElementById("taluka").value;
+                var dist=document.getElementById("district").value
                 var actualgender;
                 var i;
                 for(i = 0; i < gender.length; i++) 
@@ -173,20 +261,28 @@
                     if(gender[i].checked)
                         actualgender = gender[i].id;
                 }
-                set(ref(database,'staff/' + id), {
-                    empid: id,
-                    name: first ,
+                set(ref(database,'HemkiranMotors/staff/' + id ), {
+                    empployeeid: id,
+                    firstname: first ,
+                    lastname: second,
                     email: email,
                     gender: gender,
                     birthdate: bday,
                     mobile: phone,
-                    branch: br,
-                    password: pass,
-                    designation: des
+                    address: addr,
+                    taluka: tal,
+                    district: document.getElementById("district").value,
+                    status: status,
+                    title: title,
+                    department: department,
+                    company: company,
+                    pincode: document.getElementById("pincode").value,
+                    joindate: document.getElementById("join").value,
+                    login: "no"
                 }).then(()=> {
                     createUserWithEmailAndPassword(auth,email,pass).then((userCredential)=>{
                     const user=userCredential.user;
-				    location.replace("./home.html");
+				    location.replace("./index.html");
                 }).catch((error)=>{
                     const errorMessage=error.message;
                     alert(errorMessage);
@@ -198,5 +294,23 @@
             }
         });
     </script>    
+     <script> 
+        document.addEventListener('contextmenu', event=> event.preventDefault()); 
+        document.onkeydown = function(e) { 
+        if(event.keyCode == 123) { 
+        return false; 
+        } 
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
+        return false; 
+        } 
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
+        return false; 
+        } 
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
+        return false; 
+        } 
+        } 
+        </script> 
+  
 </body>
 </html>
