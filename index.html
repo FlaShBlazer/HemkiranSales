@@ -55,7 +55,7 @@
 					</div>
 					<div class="text-center p-t-12">
 						<span class="txt1">
-							Forgot Account Information? Please contact ADMIN.
+							New User? Please <a href="./register.html">click</a> here.
 						</span>
 						</a>
 					</div>
@@ -102,9 +102,9 @@
 			var p = document.getElementById("password").value;
 			signInWithEmailAndPassword(auth, m, p).then((userCredential) => {
 				const user = userCredential.user;
-				console.log(userCredential.user);
+				//console.log(userCredential.user);
 				//set(ref(database,"HemkiranMotors/staff/" + ))
-				//location.replace("./home.html");
+				location.replace("./home.html");
 			}).catch((error) => {
 				alert("User not found. Please register and try again.");
 			});

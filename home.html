@@ -132,27 +132,32 @@
         const database = getDatabase(app);
         const auth = getAuth();
         var logoutbtn = document.getElementById("logout");
-        auth.onAuthStateChanged((user) => {
-          if (user) {
-            database.ref("HemkiranMotors/staff/").on('value', function (snapshot) {
-              snapshot.forEach(function (childSnapshot) {
-                var data = childSnapshot.val();
-                alert(data);
-              });
-            });
-            //        document.getElementById("l1").innerHTML=
-          }
-          else {
-            alert("Something went wrong");
-          }
-        });
-        logout.addEventListener(click, (e) => {
+
+        logoutbtn.addEventListener('click', (e) => {
           e.preventDefault();
-          auth.signOut().then(() => {
-            location.replace("./index.html");
-          }).catch((error) => {
-            alert("Something went wrong. Please try again.")
-          })
+          auth.onAuthStateChanged((user) => {
+            if (user) {
+              // database.ref("HemkiranMotors/staff/").on('value', function (snapshot) {
+              //   snapshot.forEach(function (childSnapshot) {
+              //     var data = childSnapshot.val();
+              //     alert(data);
+              //   });
+              // });
+              // document.getElementById("l1").innerHTML =
+              auth.signOut().then(() => {
+
+                location.replace("./index.html");
+              }).catch((error) => {
+                alert("Something went wrong. Please try again.")
+              });
+
+            }
+            else {
+              alert("Something went wrong. home.html");
+            }
+          });
+
+
         });
       </script>
       <script>
