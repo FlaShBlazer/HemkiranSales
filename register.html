@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,208 +10,201 @@
     <title>Hemkiran- Staff Registration</title>
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <link href="css/main1.css" rel="stylesheet" media="all">
 </head>
+
 <body>
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Staff Registration Form</h2>
-                    <!-- <form method="POST"> -->
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Employee ID</label>
-                                    <input class="input--style-4" type="number" name="eid" id="eid">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="password" id="password">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="first_name" id="fname">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="last_name" id="sname">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Birthday</label>
-                                    <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday" id="bday">
-                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Gender</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Female
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" id="mailid">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone" id="contact">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="input-group">
-                                <label class="label">Company</label>
-                                <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="company" id="company">
-                                        <option disabled="disabled" selected="selected" >Choose option</option>
-                                        <option>Hemkiran Motors</option>
-                                    </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label class="label">Department</label>
-                                <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="department" id="dept">
-                                        <option disabled="disabled" selected="selected" >Choose option</option>
-                                        <option>Sales</option>
-                                        <option>Service</option>
-                                        <option>Office</option>
-                                        <option>Account</option>
-                                        <option>Back Office</option>
-                                        <option>Technician</option>
-                                        <option>Service Manager</option>
-                                        <option>Mechanical</option>
-                                    </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="input-group">
-                                <label class="label">Job Title</label>
-                                <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="title" id="title">
-                                        <option disabled="disabled" selected="selected">Choose option</option>
-                                        <option>Mech</option>
-                                        <option>Back Office</option>
-                                        <option>Cashier</option>
-                                        <option>Demo</option>
-                                        <option>DSE</option>
-                                        <option>Partner</option>
-                                        <option>Service</option>
-                                        <option>Sales Manager</option>
-                                        <option>Service Manager</option>
-                                        <option>Store</option>
-                                        <option>Store Manager</option>
-                                    </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label class="label">Status</label>
-                                <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="status" id="status">
-                                        <option disabled="disabled" selected="selected" >Choose option</option>
-                                        <option>Active</option>
-                                        <option>Inactive</option>
-                                    </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                                              
+                    <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Join Date</label>
+                                <label class="label">Employee ID</label>
+                                <input class="input--style-4" type="number" name="eid" id="eid">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Password</label>
+                                <input class="input--style-4" type="password" name="password" id="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">first name</label>
+                                <input class="input--style-4" type="text" name="first_name" id="fname">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">last name</label>
+                                <input class="input--style-4" type="text" name="last_name" id="sname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Birthday</label>
                                 <div class="input-group-icon">
-                                    <input class="input--style-4 js-datepicker" type="text" name="joindate" id="join">
+                                    <input class="input--style-4 js-datepicker" type="text" name="birthday" id="bday">
                                     <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Address</label>
-                                    <input class="input--style-4" type="text" name="address" id="address">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Taluka</label>
-                                    <input class="input--style-4" type="text" name="taluka" id="taluka">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">District</label>
-                                    <input class="input--style-4" type="text" name="district" id="district">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Pincode</label>
-                                    <input class="input--style-4" type="number" name="pincode" id="pincode">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Gender</label>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">Male
+                                        <input type="radio" checked="checked" name="gender">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Female
+                                        <input type="radio" name="gender">
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit" id="subbtn">Submit</button>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Email</label>
+                                <input class="input--style-4" type="email" name="email" id="mailid">
+                            </div>
                         </div>
-                    <!-- </form> -->
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Phone Number</label>
+                                <input class="input--style-4" type="text" name="phone" id="contact">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="input-group">
+                            <label class="label">Company</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="company" id="company">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Hemkiran Motors</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Department</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="department" id="dept">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Sales</option>
+                                    <option>Service</option>
+                                    <option>Office</option>
+                                    <option>Account</option>
+                                    <option>Back Office</option>
+                                    <option>Technician</option>
+                                    <option>Service Manager</option>
+                                    <option>Mechanical</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="input-group">
+                            <label class="label">Job Title</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="title" id="title">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Mech</option>
+                                    <option>Back Office</option>
+                                    <option>Cashier</option>
+                                    <option>Demo</option>
+                                    <option>DSE</option>
+                                    <option>Partner</option>
+                                    <option>Service</option>
+                                    <option>Sales Manager</option>
+                                    <option>Service Manager</option>
+                                    <option>Store</option>
+                                    <option>Store Manager</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Status</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="status" id="status">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Active</option>
+                                    <option>Inactive</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group">
+                            <label class="label">Join Date</label>
+                            <div class="input-group-icon">
+                                <input class="input--style-4 js-datepicker" type="text" name="joindate" id="join">
+                                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Address</label>
+                                <input class="input--style-4" type="text" name="address" id="address">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Taluka</label>
+                                <input class="input--style-4" type="text" name="taluka" id="taluka">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">District</label>
+                                <input class="input--style-4" type="text" name="district" id="district">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Pincode</label>
+                                <input class="input--style-4" type="number" name="pincode" id="pincode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-t-15">
+                        <button class="btn btn--radius-2 btn--blue" type="submit" id="subbtn">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
     <script src="vendor/select2/select2.min.js"></script>
     <script src="vendor/datepicker/moment.min.js"></script>
     <script src="vendor/datepicker/daterangepicker.js"></script>
-
-    <!-- Main JS-->
     <script src="js/global.js"></script>
-  
-  <script type="module">
+    <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-        import { getDatabase, set, ref, update, child, remove,onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+        import { getDatabase, set, ref, update, child, remove, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
         const firebaseConfig = {
             apiKey: "AIzaSyDJz2XAl2hA0-e7vDjfo-iFlLX0w8TCzMk",
@@ -224,46 +218,43 @@
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
         const auth = getAuth();
-        const btn=document.getElementById("subbtn");
-        btn.addEventListener("click",(e)=>{
-			e.preventDefault();
+        const btn = document.getElementById("subbtn");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
             var filter1 = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-            var filter2 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/ ;
-            if(!filter1.test(document.getElementById("mailid").value) && !filter2.test(document.getElementById("contact").value))
-            {
+            var filter2 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if (!filter1.test(document.getElementById("mailid").value) && !filter2.test(document.getElementById("contact").value)) {
                 document.getElementById("mailid").focus();
                 document.getElementById("mailid").style.border = "1px solid red";
                 document.getElementById("contact").style.border = "1px solid red";
                 document.getElementById("contact").focus();
             }
-            else
-            {
+            else {
 
-                var first=document.getElementById("fname").value;
-                var second=document.getElementById("sname").value;
-                var email=document.getElementById("mailid").value;
-                var gender=document.getElementsByName("gender");
-                var phone=document.getElementById("contact").value;
-                var bday=document.getElementById("bday").value;
-                var id=document.getElementById("eid").value;
-                var pass=document.getElementById("password").value;
-                var company=document.getElementById("company").value;
-                var department=document.getElementById("dept").value;
-                var status=document.getElementById("status").value;
-                var title=document.getElementById("title").value;
-                var addr=document.getElementById("address").value;
-                var tal=document.getElementById("taluka").value;
-                var dist=document.getElementById("district").value
+                var first = document.getElementById("fname").value;
+                var second = document.getElementById("sname").value;
+                var email = document.getElementById("mailid").value;
+                var gender = document.getElementsByName("gender");
+                var phone = document.getElementById("contact").value;
+                var bday = document.getElementById("bday").value;
+                var id = document.getElementById("eid").value;
+                var pass = document.getElementById("password").value;
+                var company = document.getElementById("company").value;
+                var department = document.getElementById("dept").value;
+                var status = document.getElementById("status").value;
+                var title = document.getElementById("title").value;
+                var addr = document.getElementById("address").value;
+                var tal = document.getElementById("taluka").value;
+                var dist = document.getElementById("district").value
                 var actualgender;
                 var i;
-                for(i = 0; i < gender.length; i++) 
-                {
-                    if(gender[i].checked)
+                for (i = 0; i < gender.length; i++) {
+                    if (gender[i].checked)
                         actualgender = gender[i].id;
                 }
-                set(ref(database,'HemkiranMotors/staff/' + id ), {
+                set(ref(database, 'HemkiranMotors/staff/' + id), {
                     empployeeid: id,
-                    firstname: first ,
+                    firstname: first,
                     lastname: second,
                     email: email,
                     gender: gender,
@@ -279,38 +270,39 @@
                     pincode: document.getElementById("pincode").value,
                     joindate: document.getElementById("join").value,
                     login: "no"
-                }).then(()=> {
-                    createUserWithEmailAndPassword(auth,email,pass).then((userCredential)=>{
-                    const user=userCredential.user;
-				    location.replace("./index.html");
-                }).catch((error)=>{
-                    const errorMessage=error.message;
-                    alert(errorMessage);
-                });
-                }).catch((error)=> {
+                }).then(() => {
+                    createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
+                        const user = userCredential.user;
+                        location.replace("./index.html");
+                    }).catch((error) => {
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                    });
+                }).catch((error) => {
                     alert(error.message);
                 });
-                
+
             }
         });
-    </script>    
-     <script> 
-        document.addEventListener('contextmenu', event=> event.preventDefault()); 
-        document.onkeydown = function(e) { 
-        if(event.keyCode == 123) { 
-        return false; 
+    </script>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function (e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
         } 
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
-        return false; 
-        } 
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
-        return false; 
-        } 
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
-        return false; 
-        } 
-        } 
-        </script> 
-  
+    </script>
+
 </body>
+
 </html>
