@@ -135,11 +135,19 @@
         var design = document.getElementById("l2");
         const dbRef = ref(database);
         if (auth != null) {
-          get(child(dbRef, "HemkiranMotors/staff/")).then((snapshot) => {
-            snapshot.forEach(childSnapshot => {
-              console.log(childSnapshot.val());
-            });
+          auth.onAuthStateChanged((user) => {
+            if (user) {
+              console.log(user);
+            }
+            else {
+              alert("Something went wrong!!");
+            }
           });
+          // get(child(dbRef, "HemkiranMotors/staff/" + user.email)).then((snapshot) => {
+          //   snapshot.forEach(childSnapshot => {
+          //     console.log(childSnapshot.val());
+          //   });
+          // });
         }
         else {
           auth.signOut().then(() => {

@@ -272,7 +272,6 @@
                         joindate: document.getElementById("join").value,
                         login: "no"
                     }).then(() => {
-                        console.log("here @ if");
                         createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
                             const user = userCredential.user;
                             auth.signOut().then(() => {
@@ -308,7 +307,6 @@
                         joindate: document.getElementById("join").value,
                         login: "no"
                     }).then(() => {
-                        console.log("here @ if");
                         createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
                             const user = userCredential.user;
                             auth.signOut().then(() => {
