@@ -62,7 +62,6 @@
           <li><a href="#">ATS Old</a></li>
           <li><a href="#">Stock Summ</a></li>
           <li><a href="#">Stock XIs</a></li>
-          <!-- <li><a href="#"</a></li> -->
         </ul>
       </li>
       <li class="has-dropdown">
@@ -137,13 +136,6 @@
           e.preventDefault();
           auth.onAuthStateChanged((user) => {
             if (user) {
-              // database.ref("HemkiranMotors/staff/").on('value', function (snapshot) {
-              //   snapshot.forEach(function (childSnapshot) {
-              //     var data = childSnapshot.val();
-              //     alert(data);
-              //   });
-              // });
-              // document.getElementById("l1").innerHTML =
               console.log(auth);
               auth.signOut().then(() => {
                 location.replace("./index.html");
@@ -154,8 +146,6 @@
 
             }
           });
-
-
         });
       </script>
       <script>
