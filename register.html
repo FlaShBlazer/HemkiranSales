@@ -253,7 +253,7 @@
                         actualgender = gender[i].id;
                 }
                 if (title == "Partner") {
-                    set(ref(database, 'Partners/' + id), {
+                    set(ref(database, 'HemkiranMotors/Partners/' + id), {
                         employeeid: id,
                         firstname: first,
                         lastname: second,
@@ -272,18 +272,14 @@
                         joindate: document.getElementById("join").value,
                         login: "no"
                     }).then(() => {
+                        console.log("here @ if");
                         createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
                             const user = userCredential.user;
-                            if (user) {
-                                auth.signOut().then(() => {
-                                    location.replace("./index.html");
-                                }).catch((error) => {
-                                    alert("Something went wrong. Please try again.")
-                                });
-                            }
-                            else {
+                            auth.signOut().then(() => {
                                 location.replace("./index.html");
-                            }
+                            }).catch((error) => {
+                                alert("Something went wrong. Please try again.")
+                            });
                         }).catch((error) => {
                             const errorMessage = error.message;
                             alert(errorMessage);
@@ -292,7 +288,7 @@
                         alert(error.message);
                     });;
                 }
-                else {
+                if (title != "Partner") {
                     set(ref(database, 'HemkiranMotors/staff/' + id), {
                         employeeid: id,
                         firstname: first,
@@ -312,23 +308,22 @@
                         joindate: document.getElementById("join").value,
                         login: "no"
                     }).then(() => {
+                        console.log("here @ if");
                         createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
                             const user = userCredential.user;
                             auth.signOut().then(() => {
                                 location.replace("./index.html");
                             }).catch((error) => {
                                 alert("Something went wrong. Please try again.")
-                            })
+                            });
+                        }).catch((error) => {
+                            const errorMessage = error.message;
+                            alert(errorMessage);
                         });
-                        location.replace("./index.html");
                     }).catch((error) => {
-                        const errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-
-
+                        alert(error.message);
+                    });;
                 }
-
             }
         });
     </script>
