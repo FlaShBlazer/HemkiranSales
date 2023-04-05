@@ -253,7 +253,6 @@
                         actualgender = gender[i].id;
                 }
                 if (title == "Partner") {
-
                     createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
                         const user = userCredential.user;
                         set(ref(database, 'HemkiranMotors/Partners/' + user.uid), {
@@ -275,7 +274,14 @@
                             joindate: document.getElementById("join").value,
                             login: "no"
                         }).then(() => {
+                            if (user != null) {
+                                auth.signOut().then(function () {
+                                    location.replace("./index.html");
+                                }, function (error) {
+                                    alert("Something went wrong");
+                                });
 
+                            }
                         });
 
                     }).catch((error) => {
@@ -305,8 +311,12 @@
                             login: "no"
                         }).then(() => {
                             if (user != null) {
-                                
-                                location.replace("./index.html");
+                                auth.signOut().then(function () {
+                                    location.replace("./index.html");
+                                }, function (error) {
+                                    alert("Something went wrong");
+                                });
+
                             }
                         });
 

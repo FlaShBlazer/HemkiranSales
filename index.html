@@ -102,7 +102,6 @@
 			var p = document.getElementById("password").value;
 			signInWithEmailAndPassword(auth, m, p).then((userCredential) => {
 				const user = userCredential.user;
-				console.log(user.uid + " " + user.email);
 				location.replace("./home.html");
 			}).catch((error) => {
 				alert("User not found. Please register and try again.");

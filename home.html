@@ -137,17 +137,22 @@
         if (auth != null) {
           auth.onAuthStateChanged((user) => {
             if (user) {
-              console.log(user);
+
+              get(child(dbRef, "HemkiranMotors/staff/" + user.uid)).then((snapshot) => {
+                snapshot.forEach(childSnapshot => {
+                  // console.log(childSnapshot.val());
+                  var value = childSnapshot.val();
+                  var key = Object.keys(value)[0];    //this will return 1st key.         
+                  console.log(value[key].id);
+                  //console.log(value.firstname + " " + value.lastname);
+                });
+              });
             }
             else {
               alert("Something went wrong!!");
             }
           });
-          get(child(dbRef, "HemkiranMotors/staff/" + user.uid)).then((snapshot) => {
-            snapshot.forEach(childSnapshot => {
-              console.log(childSnapshot.val());
-            });
-          });
+
         }
         else {
           auth.signOut().then(() => {
