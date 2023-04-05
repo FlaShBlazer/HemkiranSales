@@ -143,11 +143,11 @@
               alert("Something went wrong!!");
             }
           });
-          // get(child(dbRef, "HemkiranMotors/staff/" + user.email)).then((snapshot) => {
-          //   snapshot.forEach(childSnapshot => {
-          //     console.log(childSnapshot.val());
-          //   });
-          // });
+          get(child(dbRef, "HemkiranMotors/staff/" + user.uid)).then((snapshot) => {
+            snapshot.forEach(childSnapshot => {
+              console.log(childSnapshot.val());
+            });
+          });
         }
         else {
           auth.signOut().then(() => {

@@ -253,74 +253,66 @@
                         actualgender = gender[i].id;
                 }
                 if (title == "Partner") {
-                    set(ref(database, 'HemkiranMotors/Partners/' + id), {
-                        employeeid: id,
-                        firstname: first,
-                        lastname: second,
-                        email: email,
-                        gender: gender,
-                        birthdate: bday,
-                        mobile: phone,
-                        address: addr,
-                        taluka: tal,
-                        district: document.getElementById("district").value,
-                        status: status,
-                        title: title,
-                        department: department,
-                        company: company,
-                        pincode: document.getElementById("pincode").value,
-                        joindate: document.getElementById("join").value,
-                        login: "no"
-                    }).then(() => {
-                        createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
-                            const user = userCredential.user;
-                            auth.signOut().then(() => {
-                                location.replace("./index.html");
-                            }).catch((error) => {
-                                alert("Something went wrong. Please try again.")
-                            });
-                        }).catch((error) => {
-                            const errorMessage = error.message;
-                            alert(errorMessage);
+
+                    createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
+                        const user = userCredential.user;
+                        set(ref(database, 'HemkiranMotors/Partners/' + user.uid), {
+                            employeeid: id,
+                            firstname: first,
+                            lastname: second,
+                            email: email,
+                            gender: gender,
+                            birthdate: bday,
+                            mobile: phone,
+                            address: addr,
+                            taluka: tal,
+                            district: document.getElementById("district").value,
+                            status: status,
+                            title: title,
+                            department: department,
+                            company: company,
+                            pincode: document.getElementById("pincode").value,
+                            joindate: document.getElementById("join").value,
+                            login: "no"
+                        }).then(() => {
+
                         });
+
                     }).catch((error) => {
                         alert(error.message);
-                    });;
+                    });
                 }
                 if (title != "Partner") {
-                    set(ref(database, 'HemkiranMotors/staff/' + id), {
-                        employeeid: id,
-                        firstname: first,
-                        lastname: second,
-                        email: email,
-                        gender: gender,
-                        birthdate: bday,
-                        mobile: phone,
-                        address: addr,
-                        taluka: tal,
-                        district: document.getElementById("district").value,
-                        status: status,
-                        title: title,
-                        department: department,
-                        company: company,
-                        pincode: document.getElementById("pincode").value,
-                        joindate: document.getElementById("join").value,
-                        login: "no"
-                    }).then(() => {
-                        createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
-                            const user = userCredential.user;
-                            auth.signOut().then(() => {
+                    createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
+                        const user = userCredential.user;
+                        set(ref(database, 'HemkiranMotors/staff/' + user.uid), {
+                            employeeid: id,
+                            firstname: first,
+                            lastname: second,
+                            email: email,
+                            gender: gender,
+                            birthdate: bday,
+                            mobile: phone,
+                            address: addr,
+                            taluka: tal,
+                            district: document.getElementById("district").value,
+                            status: status,
+                            title: title,
+                            department: department,
+                            company: company,
+                            pincode: document.getElementById("pincode").value,
+                            joindate: document.getElementById("join").value,
+                            login: "no"
+                        }).then(() => {
+                            if (user != null) {
+                                
                                 location.replace("./index.html");
-                            }).catch((error) => {
-                                alert("Something went wrong. Please try again.")
-                            });
-                        }).catch((error) => {
-                            const errorMessage = error.message;
-                            alert(errorMessage);
+                            }
                         });
+
                     }).catch((error) => {
                         alert(error.message);
-                    });;
+                    });
                 }
             }
         });
