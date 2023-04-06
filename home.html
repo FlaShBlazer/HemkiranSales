@@ -139,18 +139,21 @@
             if (user) {
 
               get(child(dbRef, "HemkiranMotors/staff/" + user.uid)).then((snapshot) => {
-                snapshot.forEach(childSnapshot => {
-                  // console.log(childSnapshot.val());
-                  var value = childSnapshot.val();
-                  var key = Object.keys(value)[0];    //this will return 1st key.         
-                  console.log(value[key].id);
-                  //console.log(value.firstname + " " + value.lastname);
-                });
+                var fname = snapshot.child("firstname").val();
+                var sname = snapshot.child("lastname").val();
+                var title = snapshot.child("title").val();
+                document.getElementById("l1").innerHTML = fname + " " + sname;
+                document.getElementById("l2").innerHTML = title;
               });
+              // dbRef.once("HemkiranMotors/staff/" + user.uid).then((function (snapshot) {
+              //   var fname = snapshot.child("firstname").val();
+              //   var sname = snapshot.child("lastname").val();
+              //   console.log(fname + " " + sname);
+              // }));
             }
-            else {
-              alert("Something went wrong!!");
-            }
+            // else {
+            //   alert("Something went wrong!!");
+            // }
           });
 
         }

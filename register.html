@@ -255,7 +255,7 @@
                 if (title == "Partner") {
                     createUserWithEmailAndPassword(auth, email, pass).then((userCredential) => {
                         const user = userCredential.user;
-                        set(ref(database, 'HemkiranMotors/Partners/' + user.uid), {
+                        set(ref(database, 'HemkiranMotors/staff/' + user.uid), {
                             employeeid: id,
                             firstname: first,
                             lastname: second,
