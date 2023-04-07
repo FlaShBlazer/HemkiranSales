@@ -111,87 +111,87 @@
                 <div class="content rounded-3 p-3">
                     <h1 class="fs-3">Hemkiran Motors - Motor Delivery System</h1>
                 </div>
-
             </div>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
-            <script
-                src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
-            <script src="./js/script1.js"></script>
-            <script type="module">
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-                import { getDatabase, set, ref, update, child, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-                import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-                const firebaseConfig = {
-                    apiKey: "AIzaSyDJz2XAl2hA0-e7vDjfo-iFlLX0w8TCzMk",
-                    authDomain: "hemkiranmotorsales.firebaseapp.com",
-                    databaseURL: "https://hemkiranmotorsales-default-rtdb.firebaseio.com",
-                    projectId: "hemkiranmotorsales",
-                    storageBucket: "hemkiranmotorsales.appspot.com",
-                    messagingSenderId: "970937716933",
-                    appId: "1:970937716933:web:ee7582742b6df3155ce0ac"
-                };
-                const app = initializeApp(firebaseConfig);
-                const database = getDatabase(app);
-                const auth = getAuth();
-                var logoutbtn = document.getElementById("logout");
-                var name = document.getElementById("l1");
-                var design = document.getElementById("l2");
-                const dbRef = ref(database);
-                if (auth != null) {
-                    auth.onAuthStateChanged((user) => {
-                        if (user) {
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
+        <script
+            src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+        <script src="./js/script1.js"></script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+            import { getDatabase, set, ref, update, child, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+            const firebaseConfig = {
+                apiKey: "AIzaSyDJz2XAl2hA0-e7vDjfo-iFlLX0w8TCzMk",
+                authDomain: "hemkiranmotorsales.firebaseapp.com",
+                databaseURL: "https://hemkiranmotorsales-default-rtdb.firebaseio.com",
+                projectId: "hemkiranmotorsales",
+                storageBucket: "hemkiranmotorsales.appspot.com",
+                messagingSenderId: "970937716933",
+                appId: "1:970937716933:web:ee7582742b6df3155ce0ac"
+            };
+            const app = initializeApp(firebaseConfig);
+            const database = getDatabase(app);
+            const auth = getAuth();
+            var logoutbtn = document.getElementById("logout");
+            var name = document.getElementById("l1");
+            var design = document.getElementById("l2");
+            const dbRef = ref(database);
+            if (auth != null) {
+                auth.onAuthStateChanged((user) => {
+                    if (user) {
 
-                            get(child(dbRef, "HemkiranMotors/staff/" + user.uid)).then((snapshot) => {
-                                var fname = snapshot.child("firstname").val();
-                                var sname = snapshot.child("lastname").val();
-                                var title = snapshot.child("title").val();
-                                document.getElementById("l1").innerHTML = fname + " " + sname;
-                                document.getElementById("l2").innerHTML = title;
-                            });
+                        get(child(dbRef, "HemkiranMotors/staff/" + user.uid)).then((snapshot) => {
+                            var fname = snapshot.child("firstname").val();
+                            var sname = snapshot.child("lastname").val();
+                            var title = snapshot.child("title").val();
+                            document.getElementById("l1").innerHTML = fname + " " + sname;
+                            document.getElementById("l2").innerHTML = title;
+                        });
 
-                        }
+                    }
 
-                    });
-
-                }
-                else {
-                    auth.signOut().then(() => {
-                        location.replace("./index.html");
-                    }).catch((error) => {
-                        alert("Something went wrong. Please try again.")
-                    });
-                }
-                logoutbtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    auth.onAuthStateChanged((user) => {
-                        if (user) {
-                            auth.signOut().then(() => {
-                                location.replace("./index.html");
-                            }).catch((error) => {
-                                alert("Something went wrong. Please try again.")
-                            });
-
-                        }
-                    });
                 });
-            </script>
-            <script>
-                document.addEventListener('contextmenu', event => event.preventDefault());
-                document.onkeydown = function (e) {
-                    if (event.keyCode == 123) {
-                        return false;
+
+            }
+            else {
+                auth.signOut().then(() => {
+                    location.replace("./index.html");
+                }).catch((error) => {
+                    alert("Something went wrong. Please try again.")
+                });
+            }
+            logoutbtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                auth.onAuthStateChanged((user) => {
+                    if (user) {
+                        auth.signOut().then(() => {
+                            location.replace("./index.html");
+                        }).catch((error) => {
+                            alert("Something went wrong. Please try again.")
+                        });
+
                     }
-                    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                        return false;
-                    }
-                    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                        return false;
-                    }
-                    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                        return false;
-                    }
-                } 
-            </script>
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+            } 
+        </script>
 
 </body>
 
